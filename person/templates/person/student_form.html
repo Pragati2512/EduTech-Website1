@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <title>Register New User</title>
+{% endblock %}
+
+{% block body %}
+
+        {% if message %}
+                <div class="messages" style="color: red; margin-left: 60px;">
+                    {{ message }}
+                </div>
+        {% endif %}
+<div class="container" style="padding: 180px">
+        <h1> Enter Student's Details </h1>
+    <br>
+         <form action="" method="post">
+                            {% csrf_token %}
+                                        <div class="form-body">
+                                        <div class="form-group">
+
+
+                                            <div class="row">
+                                                <label class="col-lg-2"> Username </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                           <input type="text" class="form-control" required name="username" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-lg-2"> Password </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                           <input type="password" class="form-control" required name="password" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <label class="col-lg-2"> Name </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                          <input type="text" class="form-control" required name="f_name"
+                                                          placeholder="First Name">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                          <input type="text" class="form-control" name="l_name"
+                                                          placeholder="Last Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <label class="col-lg-2"> Class / Standard </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                       <input type="number" class="form-control" required name="standard"
+                                                        min=6 max=12  placeholder="Standard">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <label class="col-lg-2"> Phone Num </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                          <input type="number" class="form-control" required name="phone">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="text-left">
+                                            <button type="submit" class="btn btn-info"> Submit </button>
+                                        </div>
+                                    </div>
+                        </form>
+        <br>
+    </div>
+
+{% endblock %}

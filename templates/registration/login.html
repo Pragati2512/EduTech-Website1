@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block body %}
+
+        {% if message %}
+                <div class="messages" style="color: green ; margin-left: 60px; ">
+                    {{ message }}
+                </div>
+        {% endif %}
+    <div class="container" style="padding: 180px">
+        <h1>Welcome</h1>
+    <br>
+         <form action="" method="post">
+                            {% csrf_token %}
+
+                                        <div class="form-body">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-lg-2"> Username </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                          <input type="text" class="form-control" name="username"
+                                                                 placeholder="Username" required id="id_username">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-lg-2"> Password </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            {{ field.errors }}
+                                                          <input type="password" class="form-control" name="password"
+                                                                 placeholder="Password" required id="id_password1">
+                                                            {{ field.help_text }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="text-left">
+                                            <button type="submit" class="btn btn-info"> Login </button>
+                                        </div>
+                                    </div>
+                        </form>
+        <br>
+
+    </div>
+{% endblock %}

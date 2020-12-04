@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Doubts {% endblock %}
+
+
+{% block body %}
+<div class="container" style="padding: 180px">
+
+<div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"> All Doubts </h4>
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th> Sr. no. </th>
+                                                <th> Subject   </th>
+                                                <th> Question </th>
+                                                <th> Answer </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for doubt in doubts1 %}
+                      <tr>
+                              <td> {{ forloop.counter }}. </td>
+                              <td> {{ doubt.subject }} </td>
+                              <td> {{ doubt.question }} </td>
+                              <td> {{ doubt.answer }} </td>
+
+                      </tr>
+                      {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+
+{% endblock %}
+

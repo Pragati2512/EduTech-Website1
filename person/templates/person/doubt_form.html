@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+
+{% block head %}
+    <title>Register New User</title>
+{% endblock %}
+
+{% block body %}
+
+        {% if message %}
+                <div class="messages" style="color: red; margin-left: 60px;">
+                    {{ message }}
+                </div>
+        {% endif %}
+
+<div class="container" style="padding: 180px">
+        <h1> Ask Your Doubt </h1>
+    <br>
+         <form action="" method="post">
+                            {% csrf_token %}
+                                        <div class="form-body">
+                                        <div class="form-group">
+
+                                            <div class="row">
+                                                <label class="col-lg-2"> Subject </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                           <input type="text" class="form-control" required name="subject" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+                                            <div class="row">
+                                                <label class="col-lg-2"> Question </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <textarea rows=3 class="form-control" required name="question" >
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+<br>
+
+                                            <div class="row">
+                                                <label class="col-lg-2"> Language </label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                  <select class="form-control" name="language" id="ControlSelect3">
+                                                       <option value="English">  English   </option>
+                                                       <option value="Hindi">  Hindi  </option>
+                                                       <option value="Marathi">  Marathi  </option>
+                                                       <option value="Punjabi">  Punjabi  </option>
+                                                   </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="text-left">
+                                            <button type="submit" class="btn btn-info"> Submit </button>
+                                        </div>
+                                    </div>
+                        </form>
+        <br>
+    </div>
+
+{% endblock %}
